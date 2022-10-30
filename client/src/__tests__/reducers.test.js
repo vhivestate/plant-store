@@ -1,4 +1,6 @@
 // import our actions
+import { reducer } from '../utils/reducers';
+
 import {
     UPDATE_PRODUCTS,
     UPDATE_CATEGORIES,
