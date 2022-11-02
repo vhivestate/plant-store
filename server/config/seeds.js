@@ -27,6 +27,15 @@ db.once('open', async () => {
       quantity: 500
     },
     {
+      name: 'Boston Fern',
+      description:
+        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+      image: 'boston.jpg',
+      category: categories[0]._id,
+      price: 2.99,
+      quantity: 500
+    },
+    {
       name: 'Spider Plant',
       description:
         'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
@@ -54,11 +63,29 @@ db.once('open', async () => {
       quantity: 50
     },
     {
+      name: 'Bunny Ear Cactus',
+      category: categories[1]._id,
+      description:
+        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
+      image: 'bunny.jpg',
+      price: 3.99,
+      quantity: 50
+    },
+    {
       name: 'Snake Plant',
       category: categories[2]._id,
       description:
         'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
       image: 'snake.jpg',
+      price: 399.99,
+      quantity: 30
+    },
+    {
+      name: 'String of Pearls',
+      category: categories[2]._id,
+      description:
+        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
+      image: 'pearls.jpg',
       price: 399.99,
       quantity: 30
     },
@@ -98,11 +125,38 @@ db.once('open', async () => {
       quantity: 1000
     },
     {
+      name: 'Monstera',
+      category: categories[4]._id,
+      description:
+        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
+      image: 'monstera.jpg',
+      price: 399.99,
+      quantity: 30
+    },
+    {
+      name: 'Chinese Money Tree',
+      category: categories[4]._id,
+      description:
+        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
+      image: 'chinese.jpg',
+      price: 399.99,
+      quantity: 30
+    },
+    {
       name: 'Pepper Face',
       category: categories[4]._id,
       description:
         'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
       image: 'pepper.jpg',
+      price: 7.99,
+      quantity: 100
+    },
+    {
+      name: 'String of hearts',
+      category: categories[4]._id,
+      description:
+        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
+      image: 'hearts.jpg',
       price: 7.99,
       quantity: 100
     },
