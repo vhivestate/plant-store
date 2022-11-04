@@ -45,6 +45,29 @@ import {
             ...state,
             cart: [...state.cart, ...action.products],
         };
+
+    case REMOVE_FROM_CART:
+        let newState = state.cart.filter(product => {
+            return product._id !== action._id;
+        });
+          
+        return {
+            ...state,
+            cartOpen: newState.length > 0,
+            cart: newState
+        };
+
+    case UPDATE_CART_QUANTITY:
+        return {
+            ...state,
+            cartOpen: true,
+            cart: state.cart.map(product => {
+      if (action._id === product._id) {
+        product.purchaseQuantity = action.purchaseQuantity;
+      }
+        return product;
+    })
+  };
   
       default:
         return state;
