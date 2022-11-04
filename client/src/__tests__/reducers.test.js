@@ -16,8 +16,21 @@ import {
   // create a sample of what our global state will look like
   const initialState = {
     products: [],
-    categories: [{ name: 'Food' }],
+    categories: [{ name: 'Ferns' }],
     currentCategory: '1',
+    cart: [
+      {
+        _id: '1',
+        name: 'Bosten Fern',
+        purchaseQuantity: 1
+      },
+      {
+        _id: '2',
+        name: 'Fern',
+        purchaseQuantity: 2
+      }
+    ],
+    cartOpen: false
   };
 
   test('UPDATE_PRODUCTS', () => {
@@ -50,3 +63,12 @@ import {
     expect(initialState.currentCategory).toBe('1');
   });
   
+  test('ADD_TO_CART', () => {
+    let newState = reducer(initialState, {
+      type: ADD_TO_CART,
+      product: { purchaseQuantity: 1 }
+    });
+  
+    expect(newState.cart.length).toBe(3);
+    expect(initialState.cart.length).toBe(2);
+  });
