@@ -23,28 +23,45 @@ const Cart = () => {
           </div>
         );
       }
-
+      function calculateTotal() {
+        let sum = 0;
+        state.cart.forEach(item => {
+          sum += item.price * item.purchaseQuantity;
+        });
+        return sum.toFixed(2);
+      }
+      console.log(state)
   return (
-    <div className="cart">
-    <div className="close" onClick={toggleCart}>[close]</div>
-      <h2>Shopping Cart</h2>
-      <div>
-          <CartItem item={{name:'Golden Pothos', image:'potho.jpg', price:24.99, purchaseQuantity:3}} />
-          <CartItem item={{name:'Fiddle Fig', image:'fig.jpg', price:29.99, purchaseQuantity:4}} />
-
-          <div className="flex-row space-between">
-            <strong>Total: $0</strong>
-            {
-              Auth.loggedIn() ?
-                <button>
-                  Checkout
-                </button>
-                :
-                <span>(log in to check out)</span>
-            }
-          </div>
-        </div>
+<div className="cart">
+  <div className="close" onClick={toggleCart}>[close]</div>
+  <h2>Shopping Cart</h2>
+  {state.cart.length ? (
+    <div>
+      {state.cart.map(item => (
+        <CartItem key={item._id} item={item} />
+      ))}
+      <div className="flex-row space-between">
+        <strong>Total: ${calculateTotal()}</strong>
+        {
+          Auth.loggedIn() ?
+            <button>
+              Checkout
+            </button>
+            :
+            <span>(log in to check out)</span>
+        }
+      </div>
     </div>
+  ) : (
+    <h3>
+      <span role="img" aria-label="shocked">
+        😱
+      </span>
+      You havent added anything to your cart yet!
+    </h3>
+  )}
+</div>
+
   );
 };
 
