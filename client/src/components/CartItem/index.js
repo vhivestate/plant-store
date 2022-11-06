@@ -1,6 +1,18 @@
 import React from 'react';
+import { useStoreContext } from '../../utils/GlobalState';
+import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 
 const CartItem = ({ item }) => {
+
+  const [, dispatch] = useStoreContext();
+
+const removeFromCart = item => {
+  dispatch({
+    type: REMOVE_FROM_CART,
+    _id: item._id
+  });
+};
+
   return (
     <div className="flex-row">
       <div>
@@ -18,12 +30,13 @@ const CartItem = ({ item }) => {
             placeholder="1"
             value={item.purchaseQuantity}
           />
-          <span
-            role="img"
-            aria-label="trash"
-          >
-            🗑️
-          </span>
+        <span
+          role="img"
+          aria-label="trash"
+          onClick={() => removeFromCart(item)}
+        >
+          🗑️
+        </span>
         </div>
       </div>
     </div>
