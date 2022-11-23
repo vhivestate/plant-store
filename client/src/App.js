@@ -13,7 +13,11 @@ import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+
 import Nav from './components/Nav';
+//added stripe
+import Payment from './components/Stripe/Payment';
+
 import { StoreProvider } from "./utils/GlobalState";
 import OrderHistory from './pages/OrderHistory';
 
